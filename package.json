@@ -13,5 +13,8 @@
   "dependencies": {
     "cypress": "^13.7.0",
     "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
