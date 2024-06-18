@@ -5,12 +5,8 @@ describe("Working with alerts", () => {
     cy.visit("https://www.wcaquino.me/cypress/componentes.html");
   });
 
-  it("Alert", () => {
-    cy.get("#alert").click();
-    cy.on("window:alert", (msg) => {
-      console.log(msg);
-      expect(msg).to.be.equal("Alert Simples");
-    });
+  it.only("Alert", () => {
+    cy.clickAlert("#alert", "Alert Simples");
   });
 
   it("Alert with mock", () => {
@@ -48,7 +44,7 @@ describe("Working with alerts", () => {
     cy.get("#confirm").click();
   });
 
-  it.only("Prompt", () => {
+  it("Prompt", () => {
     cy.window().then((win) => {
       cy.stub(win, "prompt").returns("42");
     });
